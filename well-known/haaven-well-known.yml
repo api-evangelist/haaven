@@ -1,0 +1,21 @@
+generated: '2026-07-19'
+method: searched
+host: https://haaven.com
+documents:
+  - path: /.well-known/security.txt          # RFC 9116
+    status: 200
+    file: haaven-security.txt
+  - path: /.well-known/openid-configuration   # OIDC discovery
+    status: 307
+  - path: /.well-known/oauth-authorization-server  # RFC 8414
+    status: 307
+  - path: /.well-known/api-catalog             # RFC 9727
+    status: 307
+  - path: /.well-known/ai-plugin.json
+    status: 307
+notes: >-
+  haaven.com sits behind a Cloudflare bot-challenge (HTTP 403 to automated
+  clients on all HTML pages); security.txt is served directly (200). The
+  307 responses on other well-known paths are the Cloudflare redirect, not
+  real discovery documents. An api.haaven.com host exists but returns 403
+  (Cloudflare) and could not be inspected.

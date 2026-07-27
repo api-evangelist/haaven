@@ -1,7 +1,22 @@
 aid: haaven
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/haaven.png
 name: Haaven
 description: Haaven is a company surfaced as a portfolio company of speedinvest and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline. The company's
+  primary web presence is haaven.com, which sits behind a Cloudflare bot challenge; a published RFC 9116
+  security.txt (security@haaven.com, languages en,nl) and an api.haaven.com host were confirmed during
+  enrichment, but no public OpenAPI, docs, or developer portal could be read.
 url: https://raw.githubusercontent.com/api-evangelist/haaven/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +26,32 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Speedinvest
+- Portfolio
 apis: []
+common:
+- type: VulnerabilityDisclosure
+  url: security/haaven-vulnerability-disclosure.yml
+- type: Security
+  url: well-known/haaven-security.txt
+- type: DomainSecurity
+  url: security/haaven-domain-security.yml
+- type: Website
+  url: https://haaven.com
+- type: WellKnown
+  url: well-known/haaven-well-known.yml
+- type: SecurityTxt
+  url: well-known/haaven-security.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
